@@ -143,6 +143,7 @@ body {
     padding: 10px;
     display: block;
     width: 100%;
+    }
   .navbar-logo img {
     height: 60px; /* Reducimos tamaño para que no desborde */
   }
