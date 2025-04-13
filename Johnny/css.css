@@ -1,244 +1,150 @@
-/* Estilos generales para todos los dispositivos */
+/* Reseteo de márgenes y padding para evitar problemas */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Fondo para la página */
 body {
-    font-family: "Times New Roman", Times, serif;
-    background: url('wood4.png');
-    background-repeat: repeat;
-    background-attachment: fixed;
-    background-size: auto;
-    text-decoration: none;
+  font-family: "Times New Roman", Times, serif;
+  background: url('wood4.png') no-repeat center center fixed;
+  background-size: cover; /* Asegura que la imagen cubra todo */
+  text-decoration: none;
 }
 
-/* Estructura de la página, como el contenido principal y las tarjetas */
-.card, .tarjeta, .tarjeta-pergola {
-    background-color: #fbeee6;
-    color: black;
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover, .tarjeta:hover, .tarjeta-pergola:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.foto {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border: 20px solid #edbb99;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Barra de navegación */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fbeee6;
-    padding: 10px 20px;
-}
-
-.navbar-logo img {
-    height: 120px;
-    margin-right: 10px;
-    padding: 5px;
-}
-
-.navbar-title {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: black;
-}
-
-.navbar-menu {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-}
-
-.navbar-menu li {
-    display: inline;
-}
-
-.navbar-menu a {
-    color: black;
-    font-size: 1.4em;
-    font-weight: 400;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.navbar-menu a:hover {
-    color: #40E0D0;
+/* Fondo de los contenedores */
+.marco-servicios, .marco-pergola {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; /* Imágenes de fondo que cubren el área del contenedor */
 }
 
 /* Carrusel */
 .carrusel {
-    position: relative;
-    width: 50%;
-    margin: 50px auto;
-    overflow: hidden;
-    background-color: #fbeee6;
-    padding: 3px;
+  position: relative;
+  width: 50%;
+  margin: 50px auto;
+  overflow: hidden;
+  border-radius: 0px;
+  background-color: #fbeee6;
+  padding: 3px;
+  color: #fbeee6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Carrusel: Contenedor de imágenes */
 .contenedor-imagenes {
-    display: flex;
-    transition: transform 3s ease;
+  display: flex;
+  transition: transform 3s ease;
 }
 
-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    border-radius: 50%;
-    z-index: 100;
+.foto {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Mantiene la proporción sin deformar */
+  border: 20px solid #edbb99;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-button.prev {
-    left: 10px;
+/* Tarjetas */
+.card {
+  background-color: #fbeee6;
+  color: black;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 10px;
 }
 
-button.next {
-    right: 10px;
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+.card .icon {
+  font-size: 2.5em;
+  margin-bottom: 15px;
 }
 
-/* Ajustes específicos para pantallas pequeñas (tabletas y móviles) */
+/* Barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fbeee6;
+  padding: 10px 20px;
+}
+
+.navbar-logo img {
+  height: 80px;
+}
+
+.navbar-title {
+  font-size: 1.8em;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+}
+
+.navbar-menu {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-menu a {
+  color: black;
+  font-size: 1.4em;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.navbar-menu a:hover {
+  color: #40E0D0;
+}
+
+/* Media queries para móviles */
 @media (max-width: 768px) {
-    /* Aseguramos que los elementos se ajusten en pantallas pequeñas */
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .carrusel {
+    width: 100%;
+    margin: 20px auto;
+  }
 
-    .navbar-menu {
-        flex-direction: column;
-        gap: 10px;
-    }
+  .card {
+    width: 100%;
+    margin: 10px 0;
+  }
 
-    .cards-container, .cards-pergola {
-        flex-direction: column;
-        gap: 20px;
-    }
+  .foto {
+    height: auto;
+  }
 
-    .card {
-        width: 100%;
-        padding: 15px;
-    }
+  .navbar {
+    flex-direction: column;
+  }
 
-    .foto {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
-
-    .tarjeta {
-        width: 90%;
-        margin: 10px auto;
-    }
-
-    .tabla-servicios {
-        font-size: 0.9em;
-    }
-
-    .tabla-servicios img {
-        width: 100%;
-        height: auto;
-    }
-
-    h2, h3, h5 {
-        font-size: 1.5em;
-    }
-
-    p {
-        font-size: 1.2em;
-    }
-
-    .carrusel {
-        width: 100%;
-        margin: 20px 0;
-    }
+  .navbar-menu {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-/* Ajustes adicionales para pantallas muy pequeñas (teléfonos pequeños) */
 @media (max-width: 480px) {
-    h1 {
-        font-size: 1.5em;
-    }
+  .card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
 
-    h2 {
-        font-size: 1.3em;
-    }
+  .foto {
+    height: 250px;
+  }
 
-    p {
-        font-size: 1em;
-    }
-
-    .navbar-logo img {
-        height: 80px;
-    }
-}
-
-
-    p {
-        font-size: 1.2em;
-    }
-
-    /* Ajustes al carrusel */
-    .carrusel {
-        width: 100%;
-        margin: 20px 0;
-    }
-
-    .tarjeta {
-        width: 90%;
-        margin: 10px auto;
-    }
-
-    .tabla-servicios {
-        font-size: 0.9em;
-    }
-
-    .tabla-servicios img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* Para pantallas muy pequeñas (teléfonos pequeños) */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.5em;
-    }
-
-    h2 {
-        font-size: 1.3em;
-    }
-
-    p {
-        font-size: 1em;
-    }
-
-    .navbar-logo img {
-        height: 80px;
-    }
+  .navbar-title {
+    font-size: 1.2em;
+  }
 }
